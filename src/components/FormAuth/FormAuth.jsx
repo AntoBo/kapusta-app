@@ -51,7 +51,7 @@ const FormAuth = () => {
           password: '',
         }}
         validationSchema={validationSchema}
-        onSubmit={async (values, { resetForm }) => {
+        onSubmit={(values, { resetForm }) => {
           if (type === 'login') {
             dispatch(loginUser(values));
             resetForm();

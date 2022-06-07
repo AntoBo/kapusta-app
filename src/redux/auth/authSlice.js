@@ -40,11 +40,13 @@ const authSlice = createSlice({
     //register
     [registerUser.fulfilled]: (state, { payload }) => ({
       ...state,
-      user: { ...payload },
+      user: { ...payload.userData },
+      token: payload.accessToken,
+      refreshToken: payload.refreshToken,
+      sid: payload.sid,
       loading: false,
       error: null,
     }),
-    //login
     [loginUser.fulfilled]: (state, { payload }) => ({
       ...state,
       user: { ...payload.userData },

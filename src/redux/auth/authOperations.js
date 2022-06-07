@@ -12,6 +12,9 @@ export const registerUser = createAsyncThunk(
   async (newUser, thunkApi) => {
     try {
       return await fetchRegisterUser(newUser);
+      // const regResp = await fetchRegisterUser(newUser);
+      // dispatch(loginUser(newUser));
+      // return regResp;
     } catch (error) {
       return thunkApi.rejectWithValue(error.request.status);
     }
