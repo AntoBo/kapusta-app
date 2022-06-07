@@ -17,7 +17,7 @@ export const fetchRegisterUser = async newUserObject => {
   //eslint-disable-next-line
   const registerResp = await axios.post('/auth/register', newUserObject);
   const loginResp = await fetchLoginUser(newUserObject);
-  return loginResp.data;
+  return loginResp;
 };
 
 export const fetchLoginUser = async userDataObject => {
